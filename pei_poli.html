@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PEI Votes</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+</head>
+<body>
+<div>
+    <h2>Election Results</h2>
+    <a href="#popular">Popular Vote</a>
+    <a href="#district1">District 1</a>
+    <a href="#district2">District 2</a>
+    <a href="#district3">District 3 </a>
+    <a href="#district4">District 4</a>
+    <a href="#district5">District 5</a>
+    <a href="#district6">District 6</a>
+    <a href="#district7">District7 </a>
+    <a href="#district8">District 8</a>
+    <a href="#district9">District 9</a>
+    <a href="#district10">District 10</a>
+    <a href="#district11">District 11</a>
+    <a href="#district12">District 12</a>
+    <a href="#district13">District 13</a>
+    <a href="#district14">District 14</a>
+    <a href="#district15">District 15</a>
+    <a href="#district16">District 16</a>
+    <a href="#district17">District 17</a>
+    <a href="#district18">District 18</a>
+    <a href="#district19">District 19</a>
+    <a href="#district20">District 20</a>
+    <a href="#district21">District 21</a>
+    <a href="#district22">District 22</a>
+    <a href="#district23">District 23</a>
+    <a href="#district24">District 24</a>
+    <a href="#district25">District 25</a>
+    <a href="#district26">District 26</a>
+    <a href="#district27">District 27</a>
+    <h2>Referendum Results</h2>
+    <a href="#refpopular">Districts Won</a>
+    <a href="#refdistrict1">District 1</a>
+    <a href="#refdistrict2">District 2</a>
+    <a href="#refdistrict3">District 3 </a>
+    <a href="#refdistrict4">District 4</a>
+    <a href="#refdistrict5">District 5</a>
+    <a href="#refdistrict6">District 6</a>
+    <a href="#refdistrict7">District7 </a>
+    <a href="#refdistrict8">District 8</a>
+    <a href="#refdistrict9">District 9</a>
+    <a href="#refdistrict10">District 10</a>
+    <a href="#refdistrict11">District 11</a>
+    <a href="#refdistrict12">District 12</a>
+    <a href="#refdistrict13">District 13</a>
+    <a href="#refdistrict14">District 14</a>
+    <a href="#refdistrict15">District 15</a>
+    <a href="#refdistrict16">District 16</a>
+    <a href="#refdistrict17">District 17</a>
+    <a href="#refdistrict18">District 18</a>
+    <a href="#refdistrict19">District 19</a>
+    <a href="#refdistrict20">District 20</a>
+    <a href="#refdistrict21">District 21</a>
+    <a href="#refdistrict22">District 22</a>
+    <a href="#refdistrict23">District 23</a>
+    <a href="#refdistrict24">District 24</a>
+    <a href="#refdistrict25">District 25</a>
+    <a href="#refdistrict26">District 26</a>
+    <a href="#refdistrict27">District 27</a>
+</div>
+
+
+<div id='popular' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>Popular Vote</h2>
+    <canvas id="popular_vote"></canvas>
+</div>
+<div id='refpopular' class="chart-container" style="position: relative; height:400px; width:800px">
+    <h2>Referendum Vote</h2>
+    <canvas id="ref_vote"></canvas>
+</div>
+
+<div id='district1' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 1</h2>
+    <canvas id="canvas_district1"></canvas>
+</div>
+
+
+<div id='district2' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 2</h2>
+    <canvas id="canvas_district2"></canvas>
+</div>
+
+
+<div id='district3' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 3</h2>
+    <canvas id="canvas_district3"></canvas>
+</div>
+
+
+<div id='district4' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 4</h2>
+    <canvas id="canvas_district4"></canvas>
+</div>
+
+
+<div id='district5' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 5</h2>
+    <canvas id="canvas_district5"></canvas>
+</div>
+
+
+<div id='district6' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 6</h2>
+    <canvas id="canvas_district6"></canvas>
+</div>
+
+
+<div id='district7' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 7</h2>
+    <canvas id="canvas_district7"></canvas>
+</div>
+
+
+<div id='district8' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 8</h2>
+    <canvas id="canvas_district8"></canvas>
+</div>
+
+
+<div id='district9' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 9</h2>
+    <canvas id="canvas_district9"></canvas>
+</div>
+
+
+<div id='district10' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 10</h2>
+    <canvas id="canvas_district10"></canvas>
+</div>
+
+
+<div id='district11' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 11</h2>
+    <canvas id="canvas_district11"></canvas>
+</div>
+
+
+<div id='district12' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 12</h2>
+    <canvas id="canvas_district12"></canvas>
+</div>
+
+
+<div id='district13' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 13</h2>
+    <canvas id="canvas_district13"></canvas>
+</div>
+
+
+<div id='district14' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 14</h2>
+    <canvas id="canvas_district14"></canvas>
+</div>
+
+
+<div id='district15' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 15</h2>
+    <canvas id="canvas_district15"></canvas>
+</div>
+
+
+<div id='district16' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 16</h2>
+    <canvas id="canvas_district16"></canvas>
+</div>
+
+
+<div id='district17' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 17</h2>
+    <canvas id="canvas_district17"></canvas>
+</div>
+
+
+<div id='district18' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 18</h2>
+    <canvas id="canvas_district18"></canvas>
+</div>
+
+
+<div id='district19' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 19</h2>
+    <canvas id="canvas_district19"></canvas>
+</div>
+
+
+<div id='district20' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 20</h2>
+    <canvas id="canvas_district20"></canvas>
+</div>
+
+
+<div id='district21' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 21</h2>
+    <canvas id="canvas_district21"></canvas>
+</div>
+
+
+<div id='district22' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 22</h2>
+    <canvas id="canvas_district22"></canvas>
+</div>
+
+
+<div id='district23' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 23</h2>
+    <canvas id="canvas_district23"></canvas>
+</div>
+
+
+<div id='district24' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 24</h2>
+    <canvas id="canvas_district24"></canvas>
+</div>
+
+
+<div id='district25' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 25</h2>
+    <canvas id="canvas_district25"></canvas>
+</div>
+
+
+<div id='district26' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 26</h2>
+    <canvas id="canvas_district26"></canvas>
+</div>
+
+
+<div id='district27' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 27</h2>
+    <canvas id="canvas_district27"></canvas>
+</div>
+
+<h1> Referendum Votes </h1>
+<div id='refdistrict1' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 1</h2>
+    <canvas id="canvas_refdistrict1"></canvas>
+</div>
+
+
+<div id='refdistrict2' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 2</h2>
+    <canvas id="canvas_refdistrict2"></canvas>
+</div>
+
+
+<div id='refdistrict3' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 3</h2>
+    <canvas id="canvas_refdistrict3"></canvas>
+</div>
+
+
+<div id='refdistrict4' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 4</h2>
+    <canvas id="canvas_refdistrict4"></canvas>
+</div>
+
+
+<div id='refdistrict5' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 5</h2>
+    <canvas id="canvas_refdistrict5"></canvas>
+</div>
+
+
+<div id='refdistrict6' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 6</h2>
+    <canvas id="canvas_refdistrict6"></canvas>
+</div>
+
+
+<div id='refdistrict7' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 7</h2>
+    <canvas id="canvas_refdistrict7"></canvas>
+</div>
+
+
+<div id='refdistrict8' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 8</h2>
+    <canvas id="canvas_refdistrict8"></canvas>
+</div>
+
+
+<div id='refdistrict9' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 9</h2>
+    <canvas id="canvas_refdistrict9"></canvas>
+</div>
+
+
+<div id='refdistrict10' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 10</h2>
+    <canvas id="canvas_refdistrict10"></canvas>
+</div>
+
+
+<div id='refdistrict11' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 11</h2>
+    <canvas id="canvas_refdistrict11"></canvas>
+</div>
+
+
+<div id='refdistrict12' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 12</h2>
+    <canvas id="canvas_refdistrict12"></canvas>
+</div>
+
+
+<div id='refdistrict13' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 13</h2>
+    <canvas id="canvas_refdistrict13"></canvas>
+</div>
+
+
+<div id='refdistrict14' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 14</h2>
+    <canvas id="canvas_refdistrict14"></canvas>
+</div>
+
+
+<div id='refdistrict15' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 15</h2>
+    <canvas id="canvas_refdistrict15"></canvas>
+</div>
+
+
+<div id='refdistrict16' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 16</h2>
+    <canvas id="canvas_refdistrict16"></canvas>
+</div>
+
+
+<div id='refdistrict17' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 17</h2>
+    <canvas id="canvas_refdistrict17"></canvas>
+</div>
+
+
+<div id='refdistrict18' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 18</h2>
+    <canvas id="canvas_refdistrict18"></canvas>
+</div>
+
+
+<div id='refdistrict19' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 19</h2>
+    <canvas id="canvas_refdistrict19"></canvas>
+</div>
+
+
+<div id='refdistrict20' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 20</h2>
+    <canvas id="canvas_refdistrict20"></canvas>
+</div>
+
+
+<div id='refdistrict21' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 21</h2>
+    <canvas id="canvas_refdistrict21"></canvas>
+</div>
+
+
+<div id='refdistrict22' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 22</h2>
+    <canvas id="canvas_refdistrict22"></canvas>
+</div>
+
+
+<div id='refdistrict23' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 23</h2>
+    <canvas id="canvas_refdistrict23"></canvas>
+</div>
+
+
+<div id='refdistrict24' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 24</h2>
+    <canvas id="canvas_refdistrict24"></canvas>
+</div>
+
+
+<div id='refdistrict25' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 25</h2>
+    <canvas id="canvas_refdistrict25"></canvas>
+</div>
+
+
+<div id='refdistrict26' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 26</h2>
+    <canvas id="canvas_refdistrict26"></canvas>
+</div>
+
+
+<div id='refdistrict27' class="chart-container" style="position: relative; height:600px; width:800px">
+    <h2>District 27</h2>
+    <canvas id="canvas_refdistrict27"></canvas>
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+    der();
+    setInterval(der, 10000);
+
+    function der() {
+        $.get("https://kzb4sapjue.execute-api.us-east-1.amazonaws.com/default/pei_votes", function (data) {
+            var api_data = data;
+            console.log(JSON.stringify(api_data));
+
+            var ctx = document.getElementById('popular_vote').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ["Green", "Independent", "Liberal", "NDP", "PC"],
+                    datasets: [{
+                        label: null,
+                        backgroundColor: ['#68AD2E', '#000000', '#D51F24', '#F26722', '#0168C7'],
+                        data: [api_data['green_pop'], api_data['ind_pop'], api_data['lib_pop'], api_data['ndp_pop'], api_data['pc_pop']]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            var ctx2 = document.getElementById('ref_vote').getContext('2d');
+            var chart2 = new Chart(ctx2, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ["Yes", "No"],
+                    datasets: [{
+                        label: null,
+                        backgroundColor: ['#68AD2E', '#0168C7'],
+                        data: [api_data['yes_total'], api_data['no_total']]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            create_chart(api_data, 1);
+            create_chart(api_data, 2);
+            create_chart(api_data, 3);
+            create_chart(api_data, 4);
+            create_chart(api_data, 5);
+            create_chart(api_data, 6);
+            create_chart(api_data, 7);
+            create_chart(api_data, 8);
+            create_chart(api_data, 9);
+            create_chart(api_data, 10);
+            create_chart(api_data, 11);
+            create_chart(api_data, 12);
+            create_chart(api_data, 13);
+            create_chart(api_data, 14);
+            create_chart(api_data, 15);
+            create_chart(api_data, 16);
+            create_chart(api_data, 17);
+            create_chart(api_data, 18);
+            create_chart(api_data, 19);
+            create_chart(api_data, 20);
+            create_chart(api_data, 21);
+            create_chart(api_data, 22);
+            create_chart(api_data, 23);
+            create_chart(api_data, 24);
+            create_chart(api_data, 25);
+            create_chart(api_data, 26);
+            create_chart(api_data, 27);
+
+            create_ref_chart(api_data, 1);
+            create_ref_chart(api_data, 2);
+            create_ref_chart(api_data, 3);
+            create_ref_chart(api_data, 4);
+            create_ref_chart(api_data, 5);
+            create_ref_chart(api_data, 6);
+            create_ref_chart(api_data, 7);
+            create_ref_chart(api_data, 8);
+            create_ref_chart(api_data, 9);
+            create_ref_chart(api_data, 10);
+            create_ref_chart(api_data, 11);
+            create_ref_chart(api_data, 12);
+            create_ref_chart(api_data, 13);
+            create_ref_chart(api_data, 14);
+            create_ref_chart(api_data, 15);
+            create_ref_chart(api_data, 16);
+            create_ref_chart(api_data, 17);
+            create_ref_chart(api_data, 18);
+            create_ref_chart(api_data, 19);
+            create_ref_chart(api_data, 20);
+            create_ref_chart(api_data, 21);
+            create_ref_chart(api_data, 22);
+            create_ref_chart(api_data, 23);
+            create_ref_chart(api_data, 24);
+            create_ref_chart(api_data, 25);
+            create_ref_chart(api_data, 26);
+            create_ref_chart(api_data, 27);
+
+        });
+    }
+
+    function create_chart(data, district_num) {
+        var ctx = document.getElementById("canvas_district" + district_num).getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ["Green", "Independent", "Liberal", "NDP", "PC"],
+                datasets: [{
+                    label: null,
+                    backgroundColor: ['#68AD2E', '#000000', '#D51F24', '#F26722', '#0168C7'],
+                    data: [
+                        data['district_data'][district_num][0],
+                        data['district_data'][district_num][1],
+                        data['district_data'][district_num][2],
+                        data['district_data'][district_num][3],
+                        data['district_data'][district_num][4],
+                    ]
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
+
+    function create_ref_chart(data, district_num) {
+        var ctx = document.getElementById("canvas_refdistrict" + district_num).getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ["Yes", "No"],
+                datasets: [{
+                    label: null,
+                    backgroundColor: ['#68AD2E', '#0168C7'],
+                    data: [
+                        data['district_ref_data'][district_num][0],
+                        data['district_ref_data'][district_num][1],
+                    ]
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+
+            }
+        });
+    }
+</script>
+</html>
