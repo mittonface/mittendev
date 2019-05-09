@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>ch2_regression-3</title>
+<title>ch2_regression-4</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13151,6 +13151,8 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestRegressor</span>
 </pre></div>
 
     </div>
@@ -14473,7 +14475,7 @@ kmpZRJIkSZIkSVIti0iSJEmSJEmqZRFJkiRJkiRJtf5/O7yqPsnOvBoAAAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa0f83aff98&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f2704b4a358&gt;</pre>
 </div>
 
 </div>
@@ -14737,7 +14739,7 @@ Name: income_cat, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa0f5503828&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f2700501c50&gt;</pre>
 </div>
 
 </div>
@@ -15213,7 +15215,7 @@ CVDHICIiAeoYREQkQB2DiIgEqGMQEZEAdQwiIhLw/1XuLkik+ULcAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa0f423c5c0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f2700575b00&gt;</pre>
 </div>
 
 </div>
@@ -16025,7 +16027,7 @@ AAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x7fa1035a9160&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x7f26ff237898&gt;</pre>
 </div>
 
 </div>
@@ -17979,22 +17981,22 @@ Name: median_house_value, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f4158e80&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f400d0f0&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f3fb7668&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f40e0be0&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f4110198&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f40b6710&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f405fc88&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f4090278&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f40902b0&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f8022470&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f80d60b8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f820a588&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f564f4a8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f80cce10&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f835d6a0&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7fa0f831e128&gt;]],
+<pre>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f26ff19a748&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f2703068ef0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27006f7b00&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27030e80b8&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f270317c630&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27007553c8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f270305eb00&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27006eab38&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27006ea5c0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f2703345b38&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f2703412860&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f270341c0f0&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27007bada0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f27030270f0&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f2704b4af28&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f2700612908&gt;]],
       dtype=object)</pre>
 </div>
 
@@ -22031,7 +22033,7 @@ yoSdjFssFovFYrFYLGXi/wdenu+NiEMx/AAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa0f7fd0908&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f26ff17c8d0&gt;</pre>
 </div>
 
 </div>
@@ -23299,7 +23301,7 @@ Name: median_house_value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">housing_numerical</span> <span class="o">=</span> <span class="n">housing</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -23316,7 +23318,7 @@ Name: median_house_value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -23342,7 +23344,7 @@ Name: median_house_value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">imputer</span><span class="o">.</span><span class="n">statistics_</span>
@@ -23358,7 +23360,7 @@ Name: median_house_value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -23384,7 +23386,7 @@ Name: median_house_value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">housing_numerical</span><span class="p">)</span>
@@ -23438,7 +23440,7 @@ memory usage: 1.0 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">housing_cat</span> <span class="o">=</span> <span class="n">housing</span><span class="p">[[</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">]]</span>
@@ -23457,7 +23459,7 @@ memory usage: 1.0 MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -23491,7 +23493,7 @@ memory usage: 1.0 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ordinal_encoder</span><span class="o">.</span><span class="n">categories_</span>
@@ -23507,7 +23509,7 @@ memory usage: 1.0 MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -23534,7 +23536,7 @@ memory usage: 1.0 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cat_encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">()</span>
@@ -23552,7 +23554,7 @@ memory usage: 1.0 MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -23629,7 +23631,7 @@ memory usage: 1.0 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">attr_adder</span> <span class="o">=</span> <span class="n">CombinedAttributeAdder</span><span class="p">(</span><span class="n">add_bedrooms_per_room</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -23647,7 +23649,7 @@ memory usage: 1.0 MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -23741,7 +23743,7 @@ memory usage: 1.0 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
@@ -23758,7 +23760,7 @@ memory usage: 1.0 MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -23784,7 +23786,7 @@ memory usage: 1.0 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_data</span> <span class="o">=</span> <span class="n">housing</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
@@ -23829,7 +23831,7 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">housing_predictions</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">)</span>
@@ -23848,7 +23850,7 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[72]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -23873,7 +23875,7 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree_reg</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
@@ -23920,7 +23922,7 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">housing_predictions</span> <span class="o">=</span> <span class="n">tree_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">)</span>
@@ -23939,7 +23941,7 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[78]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -23958,6 +23960,516 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Oh shoot. It's horribly overfit.</p>
+<h3 id="Cross-Validation">Cross Validation<a class="anchor-link" href="#Cross-Validation">&#182;</a></h3><p>We know our model has problems, it would be premature even to run it on the test set. Instead we should do cross validation. This splits our training set into essentially smaller sets and then we use those as train/test sets.</p>
+<p>We'll use K-folds cross validation to randomly split our training data into 10 folds. It will evaluate our model 10 times, each time using 1 fold for evaluation and 9 for training.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">tree_reg</span><span class="p">,</span> <span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">tree_rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's look at these results.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">display_scores</span><span class="p">(</span><span class="n">scores</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scores:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Std Deviation:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+
+<span class="n">display_scores</span><span class="p">(</span><span class="n">tree_rmse_scores</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scores: [70806.66273945 67040.55014937 71605.63344743 68699.66165745
+ 70821.23027783 76341.09422451 71617.75495557 70706.8314468
+ 75909.85620117 69426.2342445 ]
+Mean: 71297.550934408
+Std Deviation: 2758.583819222971
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This makes our decision tree model look even worse than our linear model. Let's compute the same thing on the linear model</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lin_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lin_reg</span><span class="p">,</span> <span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">lin_rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">lin_scores</span><span class="p">)</span>
+<span class="n">display_scores</span><span class="p">(</span><span class="n">lin_rmse_scores</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scores: [66782.73843989 66960.118071   70347.95244419 74739.57052552
+ 68031.13388938 71193.84183426 64969.63056405 68281.61137997
+ 71552.91566558 67665.10082067]
+Mean: 69052.46136345083
+Std Deviation: 2731.674001798344
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This basically confirms the fact that the DecisionTree model is overfitting so badly that it is performing worse than the linear model.</p>
+<p>Let's try one last model, a RandomForestRegressor.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">forest_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">forest_reg</span><span class="p">,</span> <span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">forest_rmse_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">forest_scores</span><span class="p">)</span>
+<span class="n">display_scores</span><span class="p">(</span><span class="n">forest_rmse_scores</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scores: [51743.60187493 50744.43364675 52066.59526259 55141.28651166
+ 52220.4219479  56274.78868471 51078.60089402 50174.39172792
+ 56230.94876232 51780.23508119]
+Mean: 52745.53043939895
+Std Deviation: 2154.2886631342694
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's our best yet. But still a bit gnarly.</p>
+<h2 id="Fine-tuning-models">Fine tuning models<a class="anchor-link" href="#Fine-tuning-models">&#182;</a></h2><h3 id="Grid-search">Grid search<a class="anchor-link" href="#Grid-search">&#182;</a></h3><p>We <em>could</em> fiddle with our model hyperparameters manually until we find a great combination, but there are some built in methods to do this for us.</p>
+<p>The following tells the grid search to evaluate all 3 <em> 4 combinations of hyper parameters in the first dict, and then try all 2 </em> 6 in the second dict, but this time with bootstrap=False. So all in all it will do 18 runs with 5-fold cross validation. This will take some time to run.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="s2">&quot;max_features&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;bootstrap&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">],</span> <span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="s2">&quot;max_features&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span>
+<span class="p">]</span>
+<span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">forest_reg</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">housing_prepared</span><span class="p">,</span> <span class="n">housing_labels</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>GridSearchCV(cv=5, error_score=&#39;raise-deprecating&#39;,
+       estimator=RandomForestRegressor(bootstrap=True, criterion=&#39;mse&#39;, max_depth=None,
+           max_features=&#39;auto&#39;, max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=&#39;warn&#39;, n_jobs=None,
+           oob_score=False, random_state=None, verbose=0, warm_start=False),
+       fit_params=None, iid=&#39;warn&#39;, n_jobs=None,
+       param_grid=[{&#39;n_estimators&#39;: [3, 10, 30], &#39;max_features&#39;: [2, 4, 6, 8]}, {&#39;bootstrap&#39;: [False], &#39;n_estimators&#39;: [3, 10], &#39;max_features&#39;: [2, 3, 4]}],
+       pre_dispatch=&#39;2*n_jobs&#39;, refit=True, return_train_score=True,
+       scoring=&#39;neg_mean_squared_error&#39;, verbose=0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 30}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that this is our best combination of parameters. It probably makes sense to try some higher values because these are both parameter maxes.</p>
+<p>We can directly access the best estimator.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>RandomForestRegressor(bootstrap=True, criterion=&#39;mse&#39;, max_depth=None,
+           max_features=8, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=30, n_jobs=None, oob_score=False,
+           random_state=None, verbose=0, warm_start=False)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And we can also just get the evaluation scores from each estimator.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cvres</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">cv_results_</span>
+<span class="k">for</span> <span class="n">mean_score</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cvres</span><span class="p">[</span><span class="s2">&quot;mean_test_score&quot;</span><span class="p">],</span> <span class="n">cvres</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]):</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">mean_score</span><span class="p">),</span> <span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>64358.166906378276 {&#39;max_features&#39;: 2, &#39;n_estimators&#39;: 3}
+55505.68926594991 {&#39;max_features&#39;: 2, &#39;n_estimators&#39;: 10}
+52867.77704405329 {&#39;max_features&#39;: 2, &#39;n_estimators&#39;: 30}
+59851.53227554928 {&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 3}
+52943.19295426325 {&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 10}
+50665.91443912525 {&#39;max_features&#39;: 4, &#39;n_estimators&#39;: 30}
+57849.62933582565 {&#39;max_features&#39;: 6, &#39;n_estimators&#39;: 3}
+51879.152773778136 {&#39;max_features&#39;: 6, &#39;n_estimators&#39;: 10}
+50110.01490305376 {&#39;max_features&#39;: 6, &#39;n_estimators&#39;: 30}
+58274.444023906755 {&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 3}
+51769.84091804701 {&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 10}
+49873.27301976815 {&#39;max_features&#39;: 8, &#39;n_estimators&#39;: 30}
+62113.78447641043 {&#39;bootstrap&#39;: False, &#39;max_features&#39;: 2, &#39;n_estimators&#39;: 3}
+54294.80316987613 {&#39;bootstrap&#39;: False, &#39;max_features&#39;: 2, &#39;n_estimators&#39;: 10}
+59615.03581697931 {&#39;bootstrap&#39;: False, &#39;max_features&#39;: 3, &#39;n_estimators&#39;: 3}
+51998.852342465834 {&#39;bootstrap&#39;: False, &#39;max_features&#39;: 3, &#39;n_estimators&#39;: 10}
+59669.64591677953 {&#39;bootstrap&#39;: False, &#39;max_features&#39;: 4, &#39;n_estimators&#39;: 3}
+51684.0926596174 {&#39;bootstrap&#39;: False, &#39;max_features&#39;: 4, &#39;n_estimators&#39;: 10}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Analyze-best-models-and-errors">Analyze best models and errors<a class="anchor-link" href="#Analyze-best-models-and-errors">&#182;</a></h3><p>Sometimes by peaking into models we can get some good insight. For example, the random forest regressor can indicate the relevant importance of each attribute for making accurate predictions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_importances</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">feature_importances_</span>
+<span class="n">feature_importances</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([7.39782213e-02, 6.09132148e-02, 4.17323942e-02, 1.57258033e-02,
+       1.48343803e-02, 1.55879466e-02, 1.37591135e-02, 3.55797663e-01,
+       4.86483425e-02, 1.09895745e-01, 7.11770941e-02, 1.00183925e-02,
+       1.62873795e-01, 8.95202503e-05, 2.05253334e-03, 2.91584041e-03])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">extra_attribs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rooms_per_hhold&#39;</span><span class="p">,</span> <span class="s1">&#39;pop_per_hhold&#39;</span><span class="p">,</span> <span class="s1">&#39;bedrooms_per_room&#39;</span><span class="p">]</span>
+<span class="n">cat_encoder</span> <span class="o">=</span> <span class="n">full_pipeline</span><span class="o">.</span><span class="n">named_transformers_</span><span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">]</span>
+<span class="n">cat_one_hot_attribs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat_encoder</span><span class="o">.</span><span class="n">categories_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">attributes</span> <span class="o">=</span> <span class="n">num_attribs</span> <span class="o">+</span> <span class="n">extra_attribs</span> <span class="o">+</span> <span class="n">cat_one_hot_attribs</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">attributes</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[61]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(0.3557976631208742, &#39;median_income&#39;),
+ (0.16287379496812537, &#39;INLAND&#39;),
+ (0.10989574480238258, &#39;pop_per_hhold&#39;),
+ (0.07397822133778889, &#39;longitude&#39;),
+ (0.07117709407506317, &#39;bedrooms_per_room&#39;),
+ (0.060913214829988384, &#39;latitude&#39;),
+ (0.04864834253927721, &#39;rooms_per_hhold&#39;),
+ (0.04173239424613469, &#39;housing_median_age&#39;),
+ (0.015725803266898968, &#39;total_rooms&#39;),
+ (0.015587946553957328, &#39;population&#39;),
+ (0.014834380292383766, &#39;total_bedrooms&#39;),
+ (0.013759113516085953, &#39;households&#39;),
+ (0.010018392450838968, &#39;&lt;1H OCEAN&#39;),
+ (0.002915840410786705, &#39;NEAR OCEAN&#39;),
+ (0.0020525333390951747, &#39;NEAR BAY&#39;),
+ (8.952025031863204e-05, &#39;ISLAND&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that median_income remains most important, and really only one of the categories is useful. We could use this information to help give us a leg up on further optimization.</p>
+<h2 id="Evaluate-on-the-Test-Set">Evaluate on the Test Set<a class="anchor-link" href="#Evaluate-on-the-Test-Set">&#182;</a></h2><p>If we're happy with our model its time to try it out on the test set. We should always resist the temptation to further hone the model to make it perform better on the test set.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">strat_test_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">X_test_prepared</span> <span class="o">=</span> <span class="n">full_pipeline</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">final_predictions</span> <span class="o">=</span> <span class="n">final_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_prepared</span><span class="p">)</span>
+
+<span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">final_predictions</span><span class="p">)</span>
+<span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
+<span class="n">final_rmse</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[62]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>47943.43427320574</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are some takeaways here.</p>
 
 </div>
 </div>
